@@ -15,12 +15,30 @@ for type in pos:
 
 
 #string with our madlib story
-story = '''Old Mother Hubbard went to the %s \nto get her %s %s a bone. \nWhen she got there, the %s was %s, \nAnd so her %s dog had none.
-    \n \nJack and Jill went up the %s \nto fetch a %s of water. \nJack fell down and broke his %s \nand Jill came tumbling after. 
-    \n \nThere was a girl, and she had a little curl \nRight in the middle of her %s. \nAnd when she was %s, she was very, very %s, 
-    \nAnd when she was bad, she was %s. \n \nThere was an %s woman \nWho %s in a shoe. \nShe had so many %s, \nShe didnt know what to do.'''
+story = '''\n\nOld Mother Hubbard went to the %s 
+to get her %s %s a bone. 
+When she got there, the %s was %s, 
+And so her %s dog had none.
+    
+Jack and Jill went up the %s 
+to fetch a %s of water. 
+Jack fell down and broke his %s 
+and Jill came tumbling after. 
+
+There was a girl, and she had a little curl 
+Right in the middle of her %s. 
+And when she was %s, she was very, very %s, 
+And when she was bad, she was %s.
+
+There was an %s woman 
+Who %s in a shoe. 
+She had so many %s, 
+She didnt know what to do.'''
 
 #printing the final story
-print(story %(dict["Noun 1"], dict["Adjective 1"], dict["Animal"], dict["Noun 1"], dict["Adjective 2"], 
-dict["Adjective 3"], dict["Noun 2"], dict["Type of Container"], dict["Noun 3"], dict["Part of the body"], dict["Adjective 4"],
-dict["Adjective 5"], dict["Adjective 6"], dict["Adjective 7"], dict["Past tense verb"], dict["Plural noun"]))
+print(story %(dict["Noun 1"], dict["Adjective 1"], dict["Animal"], 
+dict["Noun 1"], dict["Adjective 2"], dict["Adjective 3"], 
+dict["Noun 2"], dict["Type of Container"], dict["Noun 3"], 
+dict["Part of the body"], dict["Adjective 4"], dict["Adjective 5"], 
+dict["Adjective 6"], dict["Adjective 7"], dict["Past tense verb"], 
+dict["Plural noun"]))

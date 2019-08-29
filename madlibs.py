@@ -3,8 +3,7 @@ def pos_input(a, dict):
     dict[a] = input("Enter a " + a + ": ")
 
 #Empty dictionary to hold user input
-dict = {
-}
+dict = {}
 pos = ["Adjective 1", "Adjective 2", "Adjective 3", "Adjective 4",
 "Adjective 5", "Adjective 6", "Adjective 7", "Animal", "Noun 1",
 "Noun 2", "Noun 3", "Part of the body", "Past tense verb",
@@ -13,6 +12,7 @@ pos = ["Adjective 1", "Adjective 2", "Adjective 3", "Adjective 4",
 #calling input function for every needed POS
 for type in pos:
     pos_input(type, dict)
+
 
 #string with our madlib story
 story = '''Old Mother Hubbard went to the %s \nto get her %s %s a bone. \nWhen she got there, the %s was %s, \nAnd so her %s dog had none.

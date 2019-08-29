@@ -1,6 +1,11 @@
-#This function takes users input
+#This function takes users input and validates if its all-alphabets
 def pos_input(a, dict):
-    dict[a] = input("Enter a " + a + ": ")
+    while True:
+        dict[a] = input("Enter a " + a + ": ")
+        if dict[a].isalpha():
+            break
+        else:
+            print("Invalid Input!")
 
 #Empty dictionary to hold user input
 dict = {}

@@ -1,4 +1,10 @@
 import os
+from random import randrange
+
+#Function to randomize the output POS
+def random_output(pos_list):
+    return randrange(len(pos_list))
+
 #Helper function to validate user input
 def user_input(pos, index):
     index += 1

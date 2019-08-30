@@ -1,26 +1,42 @@
-#This function takes users input and validates if its all-alphabets
-def pos_input(a, dict):
+import os
+#Helper function to validate user input
+def user_input(pos, index):
+    index += 1
     while True:
-        dict[a] = input("Enter a " + a + ": ")
-        if dict[a].isalpha():
-            break
+        word = input("Enter " + pos + " " + str(index) + ": ")
+        if word.isalpha():
+            return word
         else:
             print("Invalid Input!")
 
+#This function processes user input into the dictionary
+def pos_input(pos, pos_dict):
+    pos_dict[pos].append(user_input(pos, len(pos_dict[pos]))) 
+        
 #Empty dictionary to hold user input
-dict = {}
-pos = ["Adjective 1", "Adjective 2", "Adjective 3", "Adjective 4",
-"Adjective 5", "Adjective 6", "Adjective 7", "Animal", "Noun 1",
-"Noun 2", "Noun 3", "Part of the body", "Past tense verb",
+pos_dict = {}
+
+#String holding POS that user would input
+parts_of_speech = ["Adjective", "Adjective", "Adjective", "Adjective",
+"Adjective", "Adjective", "Adjective", "Animal", "Noun",
+"Noun", "Noun", "Part of the body", "Past tense verb",
 "Plural noun", "Type of Container"]
 
-#calling input function for every needed POS
-for type in pos:
-    pos_input(type, dict)
+#Welcome screen
+print("--------------   WELCOME TO MADLIBS   --------------\n\n\n")
+
+#Calling input function for every needed POS
+for pos in parts_of_speech:
+    if pos in pos_dict:
+        pass
+    else:
+        pos_dict[pos] = []
+
+    pos_input(pos, pos_dict)
 
 
-#string with our madlib story
-story = '''\n\nOld Mother Hubbard went to the %s 
+#String with our madlib story
+story = '''Old Mother Hubbard went to the %s 
 to get her %s %s a bone. 
 When she got there, the %s was %s, 
 And so her %s dog had none.
@@ -40,10 +56,13 @@ Who %s in a shoe.
 She had so many %s, 
 She didnt know what to do.'''
 
-#printing the final story
-print(story %(dict["Noun 1"], dict["Adjective 1"], dict["Animal"], 
-dict["Noun 1"], dict["Adjective 2"], dict["Adjective 3"], 
-dict["Noun 2"], dict["Type of Container"], dict["Noun 3"], 
-dict["Part of the body"], dict["Adjective 4"], dict["Adjective 5"], 
-dict["Adjective 6"], dict["Adjective 7"], dict["Past tense verb"], 
-dict["Plural noun"]))
+#Clears the input page
+os.system('clear')
+
+#Printing the final story
+print(story %(pos_dict["Noun"][0], pos_dict["Adjective"][0], pos_dict["Animal"][0], 
+pos_dict["Noun"][0], pos_dict["Adjective"][1], pos_dict["Adjective"][2], 
+pos_dict["Noun"][1], pos_dict["Type of Container"][0], pos_dict["Noun"][2], 
+pos_dict["Part of the body"][0], pos_dict["Adjective"][3], pos_dict["Adjective"][4], 
+pos_dict["Adjective"][5], pos_dict["Adjective"][6], pos_dict["Past tense verb"][0], 
+pos_dict["Plural noun"][0]))

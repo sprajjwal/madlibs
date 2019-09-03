@@ -29,6 +29,9 @@ parts_of_speech = ["Adjective", "Adjective", "Funny Noise", "Funny Noise",
 "Noun", "Noun", "Noun", "Noun", "Part of Body", "Place",
 "Plural Noun", "Plural Noun"]
 
+#Clears the input page
+os.system('clear')
+
 #Welcome screen
 print("--------------   WELCOME TO MADLIBS   --------------\n\n\n")
 
